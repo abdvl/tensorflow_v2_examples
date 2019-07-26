@@ -15,7 +15,9 @@ if
 urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:841)>
 
 ```
-    then
+
+then
+
 ```
 sudo /Applications/Python\\ 3.6/Install\\ Certificates.command 
 ```
