@@ -10,11 +10,20 @@ model = tf.keras.models.Sequential([
   tf.keras.layers.Dropout(0.2),
   tf.keras.layers.Dense(10, activation='softmax')
 ])
-
+print(model.summary())
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
 model.fit(x_train, y_train, epochs=5)
 
-model.evaluate(x_test, y_test)
+test_loss, test_accuracy = model.evaluate(x_test, y_test)
+
+print("Test accuracy: {}".format(test_accuracy))
+
+# Saving the architecture (topology) of the network
+model_json = model.to_json()
+with open("fashion_model.json", "w") as json_file:
+    json_file.write(model_json)
+
+model.save_weights("fashion_model.h5")
