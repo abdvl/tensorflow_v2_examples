@@ -1,0 +1,3 @@
+tensorflow
+python-snappy
+tensorflow_data_validation
